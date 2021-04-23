@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+	<record model="ir.ui.view" id="hr_employee_birthday_reminder_form_view">
+      <field name="name">hr_employee_birthday_reminder</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='personal_information']" position="after">
+          <page name="birthday_reminder" string="Brithday Reminder">
+            <group>
+              <group>
+                <field name="include_in_birthday_reminder_list"/>
+                <field name="next_birthday"/>
+                <field name="birthday_remind_date"/>
+              </group>
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
